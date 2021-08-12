@@ -2,6 +2,7 @@ Problem Statement
  
 
 Business Problem Overview
+
 In the telecom industry, customers are able to choose from multiple service providers and actively switch from one operator to another. In this highly competitive market, the telecommunications industry experiences an average of 15-25% annual churn rate. Given the fact that it costs 5-10 times more to acquire a new customer than to retain an existing one, customer retention has now become even more important than customer acquisition.
 
  
@@ -9,7 +10,6 @@ In the telecom industry, customers are able to choose from multiple service prov
 For many incumbent operators, retaining high profitable customers is the number one business goal.
 
  
-
 To reduce customer churn, telecom companies need to predict which customers are at high risk of churn.
 
  
@@ -19,6 +19,7 @@ In this project, you will analyse customer-level data of a leading telecom firm,
  
 
 Understanding and Defining Churn
+
 There are two main models of payment in the telecom industry - postpaid (customers pay a monthly/annual bill after using the services) and prepaid (customers pay/recharge with a certain amount in advance and then use the services).
 
  
@@ -40,6 +41,7 @@ This project is based on the Indian and Southeast Asian market.
  
 
 Definitions of Churn
+
 There are various ways to define churn, such as:
 
 Revenue-based churn: Customers who have not utilised any revenue-generating facilities such as mobile internet, outgoing calls, SMS etc. over a given period of time. One could also use aggregate metrics such as ‘customers who have generated less than INR 4 per month in total/average/median revenue’.
@@ -63,6 +65,7 @@ In this project, you will use the usage-based definition to define churn.
  
 
 High-value Churn
+
 In the Indian and the southeast Asian market, approximately 80% of revenue comes from the top 20% customers (called high-value customers). Thus, if we can reduce churn of the high-value customers, we will be able to reduce significant revenue leakage.
 
  
@@ -72,6 +75,7 @@ In this project, you will define high-value customers based on a certain metric 
  
 
 Understanding the Business Objective and the Data
+
 The dataset contains customer-level information for a span of four consecutive months - June, July, August and September. The months are encoded as 6, 7, 8 and 9, respectively. 
 
 
@@ -80,6 +84,7 @@ The business objective is to predict the churn in the last (i.e. the ninth) mont
  
 
 Understanding Customer Behaviour During Churn
+
 Customers usually do not decide to switch to another competitor instantly, but rather over a period of time (this is especially applicable to high-value customers). In churn prediction, we assume that there are three phases of customer lifecycle :
 
 The ‘good’ phase: In this phase, the customer is happy with the service and behaves as usual.
@@ -94,14 +99,10 @@ In this case, since you are working over a four-month window, the first two mont
 
  
 
-Data Dictionary
-The dataset can be download using this link. The data dictionary is provided for download below.
 
 Data Dictionary - Telecom Churn
-Download
-The data dictionary contains meanings of abbreviations. Some frequent ones are loc (local), IC (incoming), OG (outgoing), T2T (telecom operator to telecom operator), T2O (telecom operator to another operator), RECH (recharge) etc.
 
- 
+The data dictionary contains meanings of abbreviations. Some frequent ones are loc (local), IC (incoming), OG (outgoing), T2T (telecom operator to telecom operator), T2O (telecom operator to another operator), RECH (recharge) etc.
 
 The attributes containing 6, 7, 8, 9 as suffixes imply that those correspond to the months 6, 7, 8, 9 respectively.
 
@@ -121,10 +122,6 @@ This is one of the most important parts of data preparation since good features 
 2. Filter high-value customers
 
 As mentioned above, you need to predict churn only for the high-value customers. Define high-value customers as follows: Those who have recharged with an amount more than or equal to X, where X is the 70th percentile of the average recharge amount in the first two months (the good phase).
-
- 
-
-After filtering the high-value customers, you should get about 29.9k rows.
 
  
 
@@ -186,10 +183,8 @@ The above model will only be able to achieve one of the two goals - to predict c
 
 Therefore, build another model with the main objective of identifying important predictor attributes which help the business understand indicators of churn. A good choice to identify important variables is a logistic regression model or a model from the tree family. In case of logistic regression, make sure to handle multi-collinearity.
 
- 
 
 After identifying important predictors, display them visually - you can use plots, summary tables etc. - whatever you think best conveys the importance of features.
 
- 
 
 Finally, recommend strategies to manage customer churn based on your observations.
